@@ -19,6 +19,12 @@ export default {
 		},
 		extend: {
 			colors: {
+				neon: {
+					green: '#00FF88',
+					blue: '#00D4FF', 
+					pink: '#FF0080',
+					purple: '#9b87f5'
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -84,11 +90,21 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'glow': {
+					'0%, 100%': { boxShadow: '0 0 5px currentColor' },
+					'50%': { boxShadow: '0 0 20px currentColor, 0 0 30px currentColor' }
+				},
+				'fade-in': {
+					from: { opacity: '0', transform: 'translateY(20px)' },
+					to: { opacity: '1', transform: 'translateY(0)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'glow': 'glow 2s ease-in-out infinite alternate',
+				'fade-in': 'fade-in 0.6s ease-out'
 			}
 		}
 	},
